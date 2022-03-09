@@ -1,0 +1,40 @@
+baseURL = "https://mood.harrycresswell.com/"
+languageCode = "en-gb"
+title = "Mood"
+disableKinds = ["RSS", "categories", "tags", "taxonomy", "taxonomyTerm"]
+pygmentsCodeFences = false
+pygmentsUseClasses = false
+theme = "mood"
+
+[minify]
+  minifyOutput = true
+
+[permalinks]
+  post = ":slug/"
+
+[params]
+  description = "A moodboard of graphic inspiration."
+  keywords = "Harry Cresswell, mood, moodboard, design inspiration"
+  cloudinary_url = "https://res.cloudinary.com/harrycresswell/image/upload/"
+
+[author]
+  name = "Harry Cresswell"
+  email = "studio@harrycresswell.com"
+  twitter = "https://twitter.com/harrycresswell"
+  github = "https://github.com/harrycresswell"
+  linkedin = "https://linkedin.com/in/harrycresswell/"
+
+[menu]
+  [[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 5
+
+# mount posts directory into project
+[module]
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "prebuild/public/posts"
+    target = "content/posts"

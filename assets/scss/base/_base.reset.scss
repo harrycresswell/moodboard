@@ -1,0 +1,77 @@
+/*------------------------------------*\
+    #BASE: RESET
+\*------------------------------------*/
+
+/**
+ * More sensible default box-sizing:
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ */
+
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+	text-rendering: optimizeSpeed;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+// Must be 100% for off canvas to work
+html,
+body {
+	margin: 0;
+}
+
+a {
+	text-decoration: inherit;
+	color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-size: inherit;
+}
+
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+}
+
+// Responsive images
+img {
+	display: inline-block;
+	border: 0;
+	max-width: 100%;
+	min-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+figure {
+	margin: 0;
+}
+
+/* Hide focus styles if they're not needed, for example, 
+  when an element receives focus via the mouse. */
+:focus:not(:focus-visible) {
+	outline: 0;
+}
+
+/* Show focus styles on keyboard focus. */
+:focus-visible {
+	outline: dotted 2px var(--color-dark);
+	outline-offset: 3px;
+}

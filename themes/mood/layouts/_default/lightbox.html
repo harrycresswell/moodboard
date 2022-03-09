@@ -1,0 +1,64 @@
+{{ define "main" }}
+  {{ $image := .Params.image }}
+  {{ $image_alt := .Params.image_alt }}
+  {{ $image_ratio := .Params.image_ratio }}
+  <article class="Lightbox">
+    <div class="Lightbox-imageContainer">
+      <div class="Lightbox-imageContainerInner">
+        <picture class="Lightbox-image">
+          {{ with $image }}
+            <source 
+              type="image/avif" 
+              srcset="/images/f_avif/q_60/w_256/{{ . | replaceRE ".jpg|.jpeg|.JPG|.png|.PNG" ".avif"  }} 256w,
+                      /images/f_avif/q_60/w_512/{{ . | replaceRE ".jpg|.jpeg|.JPG|.png|.PNG" ".avif" }} 512w,
+                      /images/f_avif/q_60/w_768/{{ . | replaceRE ".jpg|.jpeg|.JPG|.png|.PNG" ".avif" }} 768w,
+                      /images/f_avif/q_60/w_960/{{ . | replaceRE ".jpg|.jpeg|.JPG|.png|.PNG" ".avif" }} 960w"
+            />
+            <source 
+              type="image/webp" 
+              srcset="/images/f_webp/q_60/w_256/{{ . | replaceRE ".jpg|.jpeg|.JPG|.png|.PNG" ".webp" }} 256w,
+                      /images/f_webp/q_60/w_512/{{ . | replaceRE ".jpg|.jpeg|.JPG|.png|.PNG" ".webp" }} 512w,
+                      /images/f_webp/q_60/w_768/{{ . | replaceRE ".jpg|.jpeg|.JPG|.png|.PNG" ".webp" }} 768w,
+                      /images/f_webp/q_60/w_960/{{ . | replaceRE ".jpg|.jpeg|.JPG|.png|.PNG" ".webp" }} 960w"
+            />
+            <img
+              srcset="/images/f_auto/q_60/w_256/{{ . | replaceRE ".jpeg|.JPG|.png|.PNG" ".jpg" }} 256w,
+                      /images/f_auto/q_60/w_512/{{ . | replaceRE ".jpeg|.JPG|.png|.PNG" ".jpg" }} 512w,
+                      /images/f_auto/q_60/w_768/{{ . | replaceRE ".jpeg|.JPG|.png|.PNG" ".jpg" }} 768w,
+                      /images/f_auto/q_60/w_960/{{ . | replaceRE ".jpeg|.JPG|.png|.PNG" ".jpg" }} 960w"
+              src="/images/f_auto/q_60/w_512/{{ . }}"
+              sizes="(min-width: 768px) 25vw, 100vw"
+              {{ with $image_alt }}
+                alt="{{ . }}"
+              {{ else }}
+                alt=""
+              {{ end }} 
+              {{ if (eq $image_ratio "square") }}
+                width="1000"
+                height="1000"
+              {{ else if (eq $image_ratio "landscape") }}
+                width="100%"
+                height="853"
+              {{ else if (eq $image_ratio "portrait") }}
+                width="960"
+                height="1280"
+              {{ end }}
+            />
+          {{ end }}
+        </picture>
+      </div>
+    </div>
+    <section class="Lightbox-navLinks">
+      {{ if .PrevInSection }}
+      <a href="{{ .PrevInSection.Permalink }}">Prev</a>
+      {{ end }}
+      &middot;
+      {{ if .NextInSection }}
+      <a href="{{.NextInSection.Permalink}}">Next</a>
+      {{ end }}
+    </section>
+    <footer class="Lightbox-footer">
+      <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
+    </footer>
+  </article>
+{{ end }}
