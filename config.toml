@@ -1,7 +1,7 @@
 baseURL = "https://mood.harrycresswell.com/"
 languageCode = "en-gb"
 title = "Mood"
-disableKinds = ["RSS", "categories", "tags", "taxonomy", "taxonomyTerm"]
+disableKinds = ["RSS", "section", "categories", "tags", "taxonomy", "taxonomyTerm"]
 pygmentsCodeFences = false
 pygmentsUseClasses = false
 theme = "mood"

@@ -3,19 +3,20 @@
 
 name = "Mood"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
-homepage = "http://mood.harrycresswell.com/"
-tags = ["minimal", "moodboard"]
-features = ["Cloudinary images"]
-min_version = "0.41.0"
+licenselink = "https://github.com/harrycresswell/mood/blob/main/LICENSE"
+description = "A  personal moodboard theme for visual inspiration"
+homepage = "https://github.com/harrycresswell/mood/"
+tags = ["minimal", "simple", "moodboard", "gallery", "responsive", "mobile" ]
+features = ["Cloudinary images", "Low quality Image placeholders", "Next-gen image formats"]
+min_version = "0.92.2"
 
 [author]
   name = "Harry Cresswell"
   homepage = "https://harrycresswell.com/"
+  github = "https://github.com/harrycresswell/"
 
 # If porting an existing theme
 [original]
-  name = ""
-  homepage = ""
-  repo = ""
+  author = "Harry Cresswell"
+  homepage = "https://harrycresswell.com/"
+  repo = "https://github.com/harrycresswell/mood/"

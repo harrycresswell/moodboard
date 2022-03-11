@@ -2,7 +2,7 @@
 
 A JavaScript free moodboard [Hugo](https://gohugo.io/) theme for minimalists.
 
-![Screenshot](screenshot.png)
+![Mood](preview.png)
 
 ## Live demo
 
@@ -11,10 +11,11 @@ A JavaScript free moodboard [Hugo](https://gohugo.io/) theme for minimalists.
 ## Features
 
 - Clean and simple design
-- Dynamic page meta titles
+- Page specific meta titles
 - Responsive layout
 - Minimal CSS
 - [Cloudinary](https://cloudinary.com/) image hosting
+- Page specific keywords
 - Low quality Image placeholders (LQIP)
 - Next-gen image formats (WebP & AVIF)
 - Immutable image caching
@@ -38,29 +39,31 @@ cd themes/
 git clone https://github.com/harrycresswell/mood.git
 ```
 
-Then at the top of your _config.toml_ file, set `mood` as your default theme:
+## Configuration
+
+First, move the `config.toml` and `netlify.toml` files from `themes/mood/exampleSite` to the root of your new project.
+
+Then, at the top of your _config.toml_ file, set `mood` as your default theme:
 
 ```
 theme = "mood"
 ```
 
-## Configuration
+Next, head to [Cloudinary.com](https://cloudinary.com/) and set up a free account.
 
-First, set up an account at [Cloudinary.com](https://cloudinary.com/).
-
-Open `netlify.toml` and update the `to` value under redirects from my cloud name to your own. 
+When you have an account, open `netlify.toml` and update the `to` value under redirects to your Cloudinary cloud name. 
 
 ```
 [[redirects]]
 from = "/images/:format/:quality/:width/*"
-# Change from this:
-to = "https://res.cloudinary.com/harrycresswell/image/upload/:format/:quality/:width/:splat"
-# to this
+# Replace “your-cloud-name” in URL below to your actual cloud name
 to = "https://res.cloudinary.com/your-cloud-name/image/upload/:format/:quality/:width/:splat"
 status = 200
 ```
 
 You can find your cloud name on your Cloudinary dashboard.
+
+Inside `config.toml`, under the `[params]` section update `cloudinary_url` to include your cloud name.
 
 ## Add content
 
@@ -78,9 +81,11 @@ Add pages as usual.
 hugo new some-page-name.md
 ```
 
+Replace your content folder with `themes/mood/exampleSite/content` if you’re not having much luck with the above.
+
 ## Updating menu items
 
-Add menu items to _config.toml_:
+Configure your menu items in the _config.toml_ file.
 
 ```
 [[menu.main]]
@@ -111,7 +116,6 @@ Harry Cresswell
 
 - https://github.com/harrycresswell
 - https://twitter.com/harrycresswell
-
 
 ## Problems?
 
