@@ -1,0 +1,6 @@
+[submodule "mood"]
+	path = mood
+	url = https://github.com/harrycresswell/mood.git/
+[submodule "themes/mood"]
+	path = themes/mood
+	url = https://github.com/harrycresswell/mood.git/

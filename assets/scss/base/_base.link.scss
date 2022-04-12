@@ -2,6 +2,11 @@
     #BASE: LINKS
 \*------------------------------------*/
 
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
 a[class] {
   color: var(--color-dark);
   text-decoration: none;

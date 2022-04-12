@@ -1,7 +1,11 @@
 /*------------------------------------*\
-    #UTILITIES: ALIGN ITEMS
+    #UTILITIES: RATIO
 \*------------------------------------*/
 
-.items-center {
-	align-items: center;
+.gap10 {
+ gap: .5rem;
+}
+
+.gap20 {
+	gap: 1rem;
 }

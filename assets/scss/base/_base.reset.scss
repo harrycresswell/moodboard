@@ -7,6 +7,12 @@
  * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
  */
 
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
 html {
 	box-sizing: border-box;
 	scroll-behavior: smooth;
@@ -16,21 +22,9 @@ html {
 	text-rendering: optimizeSpeed;
 }
 
-*,
-*::before,
-*::after {
-	box-sizing: inherit;
-}
-
-// Must be 100% for off canvas to work
 html,
 body {
 	margin: 0;
-}
-
-a {
-	text-decoration: inherit;
-	color: inherit;
 }
 
 p,
@@ -50,7 +44,11 @@ ol {
 	padding: 0;
 }
 
-// Responsive images
+ul[class],
+ol[class] {
+	list-style: none;
+}
+
 img {
 	display: inline-block;
 	border: 0;
@@ -58,20 +56,4 @@ img {
 	min-width: 100%;
 	height: auto;
 	vertical-align: middle;
-}
-
-figure {
-	margin: 0;
-}
-
-/* Hide focus styles if they're not needed, for example, 
-  when an element receives focus via the mouse. */
-:focus:not(:focus-visible) {
-	outline: 0;
-}
-
-/* Show focus styles on keyboard focus. */
-:focus-visible {
-	outline: dotted 2px var(--color-dark);
-	outline-offset: 3px;
 }

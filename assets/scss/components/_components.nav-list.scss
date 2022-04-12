@@ -1,7 +1,8 @@
 /*------------------------------------*\
-    #UTILITIES: ALIGN ITEMS
+    #COMPONENTS: NAV
 \*------------------------------------*/
 
-.items-center {
-	align-items: center;
+
+.NavList-itemLink.is-active {
+ text-decoration: underline;
 }
