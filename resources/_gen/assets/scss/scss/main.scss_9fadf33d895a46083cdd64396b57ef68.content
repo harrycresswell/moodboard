@@ -79,12 +79,11 @@ html {
 body {
   font-family: var(--font-system-rg);
   font-weight: var(--font-weight-regular);
-  min-height: 100vh; }
-
-main {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  min-height: calc(100vh - 180px); }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem; }
 
 h1,
 h2,
@@ -138,6 +137,9 @@ a:not([class]) {
 /*------------------------------------*\
     #COMPONENTS: POSTLIST
 \*------------------------------------*/
+.PostList {
+  margin-top: 2rem; }
+
 .PostList-item {
   position: relative; }
 
@@ -165,7 +167,8 @@ a:not([class]) {
 
 .Lightbox-imageContainerInner {
   height: 80vh;
-  width: 80vh; }
+  width: 80vh;
+  padding: .5rem; }
   .Lightbox-imageContainerInner source,
   .Lightbox-imageContainerInner img {
     position: absolute;
@@ -176,16 +179,6 @@ a:not([class]) {
     min-height: 100%;
     max-height: 100%;
     object-fit: contain; }
-
-.Lightbox-navLinks {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem; }
-
-.Lightbox-footer {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem; }
 
 /*------------------------------------*\
     #COMPONENTS: PAGINATION
@@ -230,6 +223,12 @@ a:not([class]) {
 .flex {
   display: flex; }
 
+.flex-wrap {
+  flex-wrap: wrap; }
+
+.flex-grow-1 {
+  flex-grow: 1; }
+
 /*------------------------------------*\
     #UTILITIES: RATIO
 \*------------------------------------*/
@@ -258,6 +257,9 @@ a:not([class]) {
 \*------------------------------------*/
 .items-center {
   align-items: center; }
+
+.items-end {
+  align-items: flex-end; }
 
 /*------------------------------------*\
     #UTILITIES: RATIO
@@ -299,5 +301,11 @@ a:not([class]) {
 .aspect-ratio-portrait {
   padding-bottom: calc(564 / 395 * 100%);
   /* 5:7 Aspect Ratio */ }
+
+/*------------------------------------*\
+    #UTILITIES: MARGIN
+\*------------------------------------*/
+.mt20 {
+  margin-top: 1rem; }
 
 /*# sourceMappingURL=main.css.map */

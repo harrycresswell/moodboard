@@ -11,3 +11,7 @@ The following will fetch the latest changes from upstream in each submodule, mer
 ```
 git submodule update --remote --merge
 ```
+
+Ensure you replace your existing `assets` folder with the one found in `themes/mood`.
+
+Now commit and push your changes, as normal.

@@ -2,16 +2,17 @@
     #COMPONENTS: LIGHTBOX
 \*------------------------------------*/
 
-.Lightbox-imageContainer {
+.Lightbox {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	position: relative;
 }
 
-.Lightbox-imageContainerInner {
+.Lightbox-inner {
 	height: 80vh;
 	width: 80vh;
+	padding: .5rem;
 
 	source,
 	img {
@@ -24,16 +25,4 @@
 		max-height: 100%;
 		object-fit: contain;
 	}
-}
-
-.Lightbox-navLinks {
-	position: absolute;
-	bottom: 1rem;
-	right: 1rem;
-}
-
-.Lightbox-footer {
-	position: absolute;
-	bottom: 1rem;
-	left: 1rem;
 }
